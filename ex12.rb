@@ -4,6 +4,9 @@
 # From: http://ruby.learncodethehardway.org/book/ex12.html
 
 require 'open-uri'
+# require: runs another file.  It also tracks what you've required in the past and won't require the same file twice.
+# include: takes all methods from another module and includes them in the current module.
+#   it is the primary way to extend classes with other modules (aka mix-ins)
 
 # note: this does not work exactly like the example
 open("https://www.ruby-lang.org/en") do |f|
@@ -14,3 +17,6 @@ open("https://www.ruby-lang.org/en") do |f|
     puts f.content_encoding # []
     puts f.last_modified    # Thu Dec 05 02:45:02 UTC 2002
 end
+
+# when using RVM ruby looks under the .rvm/gems/ruby version directory
+# an easy way to identify the location of this directory is to run rvm gemdir
